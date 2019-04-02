@@ -1,0 +1,3 @@
+add_subdirectory(Karaoke271)
+add_subdirectory(Karaoke271auv2)
+add_subdirectory(Karaoke271aax)

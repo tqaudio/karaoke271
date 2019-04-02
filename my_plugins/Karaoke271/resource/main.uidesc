@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vstgui-ui-description version="1">
+	<fonts>
+		<font bold="true" font-name="Helvetica" name="ProductNameFont" size="24"/>
+	</fonts>
+	<colors>
+		<color name="UnitCColor" rgba="#c3c3c3ff"/>
+	</colors>
+	<template background-color="~ BlackCColor" class="CViewContainer" name="Karaoke271" size="480, 480" transparent="false">
+		<!-- LEFT CHANNEL BUTTONS -->
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="80, 72" size="128, 24" text-alignment="left" title="L CHANNEL" transparent="true"/>
+		<view background-offset="0, 0" bitmap="checkbox_1x" class="COnOffButton" control-tag="Parameters::kLeftLChannelId" opacity="1" origin="80, 128" size="32, 32" tooltip="Left L Signal ON / OFF Button" transparent="true" wants-focus="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="120, 132" size="128, 24" text-alignment="left" title="L SIGNAL" transparent="true"/>
+		<view background-offset="0, 0" bitmap="checkbox_1x" class="COnOffButton" control-tag="Parameters::kLeftRChannelId" opacity="1" origin="80, 160" size="32, 32" tooltip="Left R Signal ON / OFF Button" transparent="true" wants-focus="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="120, 164" size="128, 24" text-alignment="left" title="R SIGNAL" transparent="true"/>
+		<!-- RIGHT CHANNEL BUTTONS -->
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="272, 72" size="128, 24" text-alignment="left" title="R CHANNEL" transparent="true"/>
+		<view background-offset="0, 0" bitmap="checkbox_1x" class="COnOffButton" control-tag="Parameters::kRightLChannelId" opacity="1" origin="272, 128" size="32, 32" tooltip="Right L Signal ON / OFF Button" transparent="true" wants-focus="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="312, 132" size="128, 24" text-alignment="left" title="L SIGNAL" transparent="true"/>
+		<view background-offset="0, 0" bitmap="checkbox_1x" class="COnOffButton" control-tag="Parameters::kRightRChannelId" opacity="1" origin="272, 160" size="32, 32" tooltip="Right R Signal ON / OFF Button" transparent="true" wants-focus="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="312, 164" size="128, 24" text-alignment="left" title="R SIGNAL" transparent="true"/>
+		<!-- MID SIDE BALANCE SLIDER -->
+		<view background-offset="0, 0" bitmap="slider_background_1x" bitmap-offset="0, 0" class="CSlider" control-tag="Parameters::kMidSideBalanceId" handle-bitmap="slider_handle_1x" handle-offset="0, 16" mode="free click" mouse-enabled="true" opacity="1" orientation="horizontal" origin="112, 240" reverse-orientation="false" size="256, 80" transparent="true" transparent-handle="true" wheel-inc-value="0.001" zoom-factor="10"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="120, 304" size="80, 24" text-alignment="left" title="MID" transparent="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="320, 304" size="80, 24" text-alignment="left" title="SIDE" transparent="true"/>
+		<view back-color="~ TransparentCColor" class="CTextEdit" control-tag="Parameters::kMidSideBalanceId" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="200, 336" size="80, 24" text-alignment="center" title="0.00" transparent="true"/>
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="200, 360" size="80, 24" text-alignment="center" title="RATIO" transparent="true"/>
+		<!-- PRODUCT NAME -->
+		<view back-color="~ TransparentCColor" class="CTextLabel" font="ProductNameFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="0, 424" size="480, 24" text-alignment="center" title="Karaoke271" transparent="true"/>
+	</template>
+	<custom>
+	</custom>
+	<bitmaps>
+		<bitmap name="slider_background_1x" path="slider_background_1x.png"/>
+		<bitmap name="slider_background_2x" path="slider_background_2x.png"/>
+		<bitmap name="slider_background_3x" path="slider_background_3x.png"/>
+		<bitmap name="slider_handle_1x" path="slider_handle_1x.png"/>
+		<bitmap name="slider_handle_2x" path="slider_handle_2x.png"/>
+		<bitmap name="slider_handle_3x" path="slider_handle_3x.png"/>
+		<bitmap name="checkbox_1x" path="checkbox_1x.png"/>
+		<bitmap name="checkbox_2x" path="checkbox_2x.png"/>
+		<bitmap name="checkbox_3x" path="checkbox_3x.png"/>
+		<bitmap name="onoff_button" path="onoff_button.png"/>
+		<bitmap name="onoff_button_2x" path="onoff_button_2x.png"/>
+		<bitmap name="onoff_button_3x" path="onoff_button_3x.png"/>
+		<bitmap name="slider_background" path="slider_background.png"/>
+		<bitmap name="slider_handle" path="slider_handle.png"/>
+	</bitmaps>
+	<control-tags>
+		<control-tag name="Parameters::kBypassId" tag="100"/>
+		<control-tag name="Parameters::kLeftLChannelId" tag="101"/>
+		<control-tag name="Parameters::kLeftRChannelId" tag="102"/>
+		<control-tag name="Parameters::kRightLChannelId" tag="103"/>
+		<control-tag name="Parameters::kRightRChannelId" tag="104"/>
+		<control-tag name="Parameters::kMidSideBalanceId" tag="105"/>
+	</control-tags>
+</vstgui-ui-description>
