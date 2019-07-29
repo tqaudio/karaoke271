@@ -7,15 +7,16 @@ if(SMTG_AAX_SDK_PATH AND SMTG_ADD_VSTGUI)
   set(
     Karaoke271aax_sources
     source/aax.cpp
-    ../Karaoke271/include/version.h
-    ../Karaoke271/include/id.h
     ../Karaoke271/include/controller.h
+    ../Karaoke271/include/constants.h
+    ../Karaoke271/include/id.h
     ../Karaoke271/include/parameter.h
     ../Karaoke271/include/processor.h
+    ../Karaoke271/include/version.h
+    ../Karaoke271/source/controller.cpp
     ../Karaoke271/source/factory.cpp
     ../Karaoke271/source/parameter.cpp
     ../Karaoke271/source/processor.cpp
-    ../Karaoke271/source/controller.cpp
   )
   set(Karaoke271_sources ${Karaoke271aax_sources} ${base_sources})
   set(target Karaoke271aax)

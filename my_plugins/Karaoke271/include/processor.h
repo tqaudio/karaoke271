@@ -1,12 +1,13 @@
 #pragma once
 
-#include "id.h"
-#include "parameter.h"
-
 #include "base/source/fstreamer.h"
 #include "pluginterfaces/base/ibstream.h"
 #include "pluginterfaces/vst/ivstparameterchanges.h"
 #include "public.sdk/source/vst/vstaudioeffect.h"
+
+#include "constants.h"
+#include "id.h"
+#include "parameter.h"
 
 using namespace Steinberg;
 using namespace Steinberg::Vst;
@@ -31,14 +32,14 @@ public:
   tresult PLUGIN_API setState(IBStream *state) SMTG_OVERRIDE;
   tresult PLUGIN_API getState(IBStream *state) SMTG_OVERRIDE;
 
-protected:
-  AutomationParameter *mMidSideBalances;
+private:
+  AutomationParameter *mMidSideBalances = nullptr;
 
   bool mBypass = false;
-  bool mLeftL;
-  bool mLeftR;
-  bool mRightL;
-  bool mRightR;
-  ParamValue mMidSideBalance;
+  bool mLeftL = true;
+  bool mLeftR = false;
+  bool mRightL = false;
+  bool mRightR = true;
+  ParamValue mMidSideBalance = Constants::midSideBalanceNormalized;
 };
 } // namespace Karaoke271

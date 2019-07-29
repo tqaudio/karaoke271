@@ -1,12 +1,7 @@
 #pragma once
 
-#define DEFAULT_MID_SIDE_BALANCE 50 /* percentage */
-#define DEFAULT_MID_SIDE_BALANCE_NORMALIZED DEFAULT_MID_SIDE_BALANCE / 100.0f
-
 #include "pluginterfaces/base/ustring.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
-#include <math.h>
-#include <string.h>
 
 using namespace Steinberg;
 using namespace Steinberg::Vst;
@@ -22,10 +17,8 @@ enum Parameters : ParamID {
 };
 
 struct AutomationParameter {
-public:
-  ParamValue value;
-  bool hasChanged;
-  AutomationParameter() : value(0.0f), hasChanged(false){};
+  ParamValue value = 0.0;
+  bool hasChanged = false;
 };
 
 class ToggleParameter : public Parameter {

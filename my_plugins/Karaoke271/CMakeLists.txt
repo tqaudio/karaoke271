@@ -1,12 +1,13 @@
 set(
   plugin_sources
   include/controller.h
+  include/constants.h
   include/id.h
   include/parameter.h
   include/processor.h
   include/version.h
-  source/factory.cpp
   source/controller.cpp
+  source/factory.cpp
   source/parameter.cpp
   source/processor.cpp
 )

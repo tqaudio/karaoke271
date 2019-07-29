@@ -25,8 +25,6 @@
 		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="320, 304" size="80, 24" text-alignment="left" title="SIDE" transparent="true"/>
 		<view back-color="~ TransparentCColor" class="CTextEdit" control-tag="Parameters::kMidSideBalanceId" font="~ NormalFontVeryBig" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="200, 336" size="80, 24" text-alignment="center" title="0.00" transparent="true"/>
 		<view back-color="~ TransparentCColor" class="CTextLabel" font="~ NormalFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="200, 360" size="80, 24" text-alignment="center" title="RATIO" transparent="true"/>
-		<!-- PRODUCT NAME -->
-		<view back-color="~ TransparentCColor" class="CTextLabel" font="ProductNameFont" font-antialias="true" font-color="~ WhiteCColor" opacity="1" origin="0, 424" size="480, 24" text-alignment="center" title="Karaoke271" transparent="true"/>
 	</template>
 	<custom>
 	</custom>

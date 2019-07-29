@@ -34,7 +34,7 @@ tresult PLUGIN_API Controller::initialize(FUnknown *context) {
   parameters.addParameter(rightR);
 
   LinearParameter *midSideBalance = new LinearParameter(
-      "Mid Side Balance", "", 100.0f, 2, ParameterInfo::kCanAutomate,
+      "Mid Side Balance", "", 100.0, 2, ParameterInfo::kCanAutomate,
       Parameters::kMidSideBalanceId);
   parameters.addParameter(midSideBalance);
 
@@ -53,6 +53,7 @@ tresult PLUGIN_API Controller::setComponentState(IBStream *state) {
   int32 savedRightL;
   int32 savedRightR;
   float savedMidSideBalance;
+
   if (!streamer.readInt32(savedBypass)) {
     return kResultFalse;
   }

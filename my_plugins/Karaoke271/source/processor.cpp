@@ -1,11 +1,7 @@
 #include "../include/processor.h"
 
 namespace Karaoke271 {
-Processor::Processor()
-    : mLeftL(true), mRightL(false), mRightR(true), mLeftR(false),
-      mMidSideBalance(DEFAULT_MID_SIDE_BALANCE_NORMALIZED) {
-  setControllerClass(ControllerID);
-}
+Processor::Processor() { setControllerClass(ControllerID); }
 
 tresult PLUGIN_API Processor::initialize(FUnknown *context) {
   tresult result = AudioEffect::initialize(context);
@@ -120,8 +116,8 @@ tresult PLUGIN_API Processor::process(ProcessData &data) {
       float *outputLChannel = data.outputs[0].channelBuffers32[0];
       float *outputRChannel = data.outputs[0].channelBuffers32[1];
 
-      double lSignal = 0.0f;
-      double rSignal = 0.0f;
+      double lSignal{0.0};
+      double rSignal{0.0};
 
       if (mLeftL && mLeftR) {
         lSignal = (inputLChannel[sample] + inputRChannel[sample]) / 2.0f;
@@ -142,16 +138,16 @@ tresult PLUGIN_API Processor::process(ProcessData &data) {
       double lSide = lSignal - mid;
       double rSide = rSignal - mid;
 
-      if (mMidSideBalance < 0.5f) {
-        outputLChannel[sample] = 2.0f * mMidSideBalance * lSignal +
-                                 2.0f * (0.5f - mMidSideBalance) * mid;
-        outputRChannel[sample] = 2.0f * mMidSideBalance * rSignal +
-                                 2.0f * (0.5f - mMidSideBalance) * mid;
-      } else if (mMidSideBalance > 0.5f) {
-        outputLChannel[sample] = 2.0f * (1.0f - mMidSideBalance) * lSignal +
-                                 4.0f * (mMidSideBalance - 0.5f) * lSide;
-        outputRChannel[sample] = 2.0f * (1.0f - mMidSideBalance) * rSignal +
-                                 4.0f * (mMidSideBalance - 0.5f) * rSide;
+      if (mMidSideBalance < 0.5) {
+        outputLChannel[sample] = 2.0 * mMidSideBalance * lSignal +
+                                 2.0 * (0.5 - mMidSideBalance) * mid;
+        outputRChannel[sample] = 2.0 * mMidSideBalance * rSignal +
+                                 2.0 * (0.5 - mMidSideBalance) * mid;
+      } else if (mMidSideBalance > 0.5) {
+        outputLChannel[sample] = 2.0 * (1.0 - mMidSideBalance) * lSignal +
+                                 4.0 * (mMidSideBalance - 0.5) * lSide;
+        outputRChannel[sample] = 2.0 * (1.0 - mMidSideBalance) * rSignal +
+                                 4.0 * (mMidSideBalance - 0.5) * rSide;
       } else {
         outputLChannel[sample] = lSignal;
         outputRChannel[sample] = rSignal;
@@ -168,12 +164,12 @@ tresult PLUGIN_API Processor::setState(IBStream *state) {
   }
 
   IBStreamer streamer(state, kLittleEndian);
-  int32 savedBypass = 0;
-  int32 savedLeftL = 0;
-  int32 savedLeftR = 0;
-  int32 savedRightL = 0;
-  int32 savedRightR = 0;
-  float savedMidSideBalance = 0.0f;
+  int32 savedBypass{0};
+  int32 savedLeftL{0};
+  int32 savedLeftR{0};
+  int32 savedRightL{0};
+  int32 savedRightR{0};
+  float savedMidSideBalance{0.0};
 
   if (!streamer.readInt32(savedBypass)) {
     return kResultFalse;

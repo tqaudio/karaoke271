@@ -1,3 +1,5 @@
+#include <math.h>
+
 #include "../include/parameter.h"
 
 namespace Karaoke271 {
@@ -10,7 +12,7 @@ ToggleParameter::ToggleParameter(const char *title, int32 flags, int32 id) {
 }
 
 void ToggleParameter::toString(ParamValue normValue, String128 text) const {
-  if (normValue == 0.0f) {
+  if (normValue == 0.0) {
     UString(text, 128).fromAscii("OFF");
   } else {
     UString(text, 128).fromAscii("ON");
@@ -42,14 +44,14 @@ void LinearParameter::toString(ParamValue normValue, String128 text) const {
 
 bool LinearParameter::fromString(const TChar *text,
                                  ParamValue &normValue) const {
-  double value = 0.0f;
+  double value{0.0};
   UString wrapper((TChar *)text, -1);
 
   if (!wrapper.scanFloat(value)) {
     return false;
   }
-  if (value < 0.0f) {
-    value = 0.0f;
+  if (value < 0.0) {
+    value = 0.0;
   }
   if (value > mMaxValue) {
     value = mMaxValue;
